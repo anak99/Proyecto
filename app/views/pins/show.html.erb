@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+ <%= @pin.description %>
+</p>
+
+<div>
+	<%= image_tag @pin.pin_image.url (:medium) %>
+</div>
+
+<%= link_to 'Editar', edit_pin_path(@pin) %> |
+<%= link_to 'Regresar', pins_path %>

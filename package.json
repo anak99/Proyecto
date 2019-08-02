@@ -1,0 +1,9 @@
+{
+  "name": "pinterest",
+  "private": true,
+  "dependencies": {
+    "imagesloaded": "^4.1.4",
+    "masonry": "0.0.2",
+    "masonry-layout": "^4.2.2"
+  }
+}

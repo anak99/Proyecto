@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<% if @post.image.attached? %>
+ 	<p>
+ 		<strong>Image:</strong>
+ 	<br>
+		<%= image_tag @post.image.variant(resize: "100x100") %>
+<% end %>
+
+<p>
+  <strong>Tittlecontect:</strong>
+  <%= @post.tittlecontect %>
+</p>
+
+
+<%= link_to 'Editar', edit_post_path(@post) %> |
+<%= link_to 'Regresar', posts_path %>

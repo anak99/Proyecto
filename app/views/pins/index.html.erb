@@ -1,0 +1,26 @@
+<div class="gallery-container">
+  <% @pins.each do |pin| %>
+
+        <div class = "col-md-4 pin-item">
+        <div class="panel panel-default pin">
+          <div class="panel-body">
+              <%= link_to (image_tag pin.pin_image.url(:medium)), pin %> 
+          </div>
+            <div class="panel-footer">
+               <p><strong><%= link_to pin.user.username, user_path(pin.user.username) %></strong></p>
+              <p> <%= pin.description %></p>
+              <p><%= pluralize(pin.likes.count, "like")%></p>
+
+              <% if pin.user == current_user %>
+
+              <div> 
+                <%= link_to 'Editar', edit_pin_path(pin) %> |
+                <%= link_to 'ELiminar', pin, method: :delete, data: { confirm: 'Estas seguro?' } %>
+                <%= link_to 'Like', like_pin_path(pin), method: :post, class: 'pul-right' %>
+              </div>
+            <% end %>
+          </div>
+       </div>
+     </div>
+   <% end %>
+</div>
